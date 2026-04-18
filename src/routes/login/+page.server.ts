@@ -1,0 +1,54 @@
+import { prisma } from "$lib/server/prisma";
+import type { Actions } from "@sveltejs/kit";
+import bcrypt from "bcryptjs";
+import crypto from "crypto";
+
+export const prerender = false;
+
+export const actions = {
+  login: async ({ cookies, request }) => {
+    const data = await request.formData();
+
+    const username = data.get("username");
+    const password = data.get("password");
+
+    if (typeof username !== "string" || typeof password !== "string") {
+      return { success: false, error: "Invalid form data" };
+    }
+
+    const user = await prisma.author.findUnique({ where: { name: username } });
+    if (!user) {
+      return { success: false, error: "Invalid username or password" };
+    }
+
+    const isValidPassword = await bcrypt.compare(password, user.password);
+    if (!isValidPassword) {
+      return { success: false, error: "Invalid username or password" };
+    }
+
+    const token = crypto.randomBytes(32).toString("hex");
+
+    const session = await prisma.session.create({
+      data: {
+        authorId: user.id,
+        expiresAt: new Date(Date.now() + 7 * 24 * 60 * 60 * 1000), // 7 days
+        token,
+      },
+    });
+
+    cookies.set("sessionId", session.token, {
+      path: "/",
+      httpOnly: true,
+      secure: process.env.NODE_ENV === "production",
+      sameSite: "lax",
+      maxAge: 7 * 24 * 60 * 60, // 7 days
+    });
+
+    return { success: true };
+  },
+
+  logout: async ({ cookies }) => {
+    cookies.delete("sessionId", { path: "/" });
+    return { success: true };
+  }
+} satisfies Actions;
