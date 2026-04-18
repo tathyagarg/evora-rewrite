@@ -14,6 +14,7 @@ export const handle: Handle = async ({ event, resolve }) => {
             password: false,
             id: true,
             name: true,
+            role: true,
           }
         },
       }

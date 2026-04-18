@@ -28,6 +28,7 @@ export const actions = {
     const quote = data.get("quote");
     const content = data.get("content");
     const kind = data.get("kind");
+    const image = data.get("image");
 
     if (typeof title !== "string" || typeof content !== "string") {
       return fail("Invalid form data");
@@ -41,6 +42,7 @@ export const actions = {
         title,
         quote: typeof quote === "string" ? quote : null,
         content,
+        imgUrl: typeof image === "string" ? image : null,
         postKindId: typeof kind === "string" ? parseInt(kind) : null,
         authorId: locals.user.id,
       },

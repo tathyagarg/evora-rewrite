@@ -17,6 +17,9 @@
   <label for="content">Content:</label>
   <textarea id="content" name="content"></textarea>
 
+  <label for="image">Image URL:</label>
+  <input type="url" id="image" name="image" />
+
   <label for="kind">Kind:</label>
   <select id="kind" name="kind" required>
     {#each postKinds as kind}

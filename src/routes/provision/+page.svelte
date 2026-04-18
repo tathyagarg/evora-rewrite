@@ -5,7 +5,7 @@
 {#if form?.success}
   <p>Form submitted successfully!</p>
 {:else if form?.error}
-  <p>Error submitting form: {form.body.error}</p>
+  <p>Error submitting form: {form.error}</p>
 {/if}
 
 <form method="POST">
