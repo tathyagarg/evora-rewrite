@@ -5,23 +5,14 @@
 
   let { data } = $props();
 
-  let disabled = !data.has_recap;
-  console.log(disabled);
-
-  const start_date = new Date(data.start_date);
-  const end_date = data.end_date ? new Date(data.end_date) : undefined;
+  const start_date = new Date(data.start);
+  const end_date = data.end ? new Date(data.end) : undefined;
 </script>
 
 <Button align_top={true}>
-  <button
-    class="w-full h-full flex flex-col gap-4 text-left"
-    class:cursor-pointer={!disabled}
-    onclick={() => (window.location.href = `/events/${data.slug}`)}
-    aria-label={`Read more about ${data.title}`}
-    {disabled}
-  >
+  <button class="w-full h-full flex flex-col gap-4 text-left" disabled>
     <img
-      src={data.img_url}
+      src={data.imgUrl}
       alt={data.title}
       class="w-full aspect-[5/4] object-cover rounded-lg content-center"
     />
@@ -38,9 +29,6 @@
         </div>
       </div>
       <p class="text-lg">{data.description}</p>
-      {#if !disabled}
-        <a href="/events/{data.slug}" class="text-primary">Read more</a>
-      {/if}
     </div>
   </button>
 </Button>

@@ -87,3 +87,16 @@ model Post {
 
   tags PostTag[]
 }
+
+model Event {
+  slug String @id
+  name String
+
+  description String
+  imgUrl      String?
+
+  start DateTime
+  end   DateTime
+
+  location String
+}
