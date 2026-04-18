@@ -5,6 +5,37 @@ import crypto from "crypto";
 
 export const prerender = false;
 
+async function upgradeProvisional(name: string, password: string) {
+  const existingProvisional = await prisma.provisionalAuthor.findUnique({
+    where: { name },
+  });
+
+  if (existingProvisional) {
+    const hashedPassword = await bcrypt.hash(password, 10);
+
+    const user = await prisma.author.create({
+      data: {
+        name,
+        password: hashedPassword,
+      },
+    });
+
+    await prisma.provisionalAuthor.delete({ where: { id: existingProvisional.id } });
+
+    const token = crypto.randomBytes(32).toString("hex");
+
+    const session = await prisma.session.create({
+      data: {
+        authorId: user.id,
+        expiresAt: new Date(Date.now() + 7 * 24 * 60 * 60 * 1000), // 7 days
+        token,
+      },
+    });
+
+    return session.token;
+  }
+}
+
 export const actions = {
   login: async ({ cookies, request }) => {
     const data = await request.formData();
@@ -18,25 +49,26 @@ export const actions = {
 
     const user = await prisma.author.findUnique({ where: { name: username } });
     if (!user) {
-      return { success: false, error: "Invalid username or password" };
+      var token = await upgradeProvisional(username, password);
+    } else {
+
+      const isValidPassword = await bcrypt.compare(password, user.password);
+      if (!isValidPassword) {
+        return { success: false, error: "Invalid username or password" };
+      }
+
+      var token = crypto.randomBytes(32).toString("hex");
+
+      await prisma.session.create({
+        data: {
+          authorId: user.id,
+          expiresAt: new Date(Date.now() + 7 * 24 * 60 * 60 * 1000), // 7 days
+          token,
+        },
+      });
     }
 
-    const isValidPassword = await bcrypt.compare(password, user.password);
-    if (!isValidPassword) {
-      return { success: false, error: "Invalid username or password" };
-    }
-
-    const token = crypto.randomBytes(32).toString("hex");
-
-    const session = await prisma.session.create({
-      data: {
-        authorId: user.id,
-        expiresAt: new Date(Date.now() + 7 * 24 * 60 * 60 * 1000), // 7 days
-        token,
-      },
-    });
-
-    cookies.set("sessionId", session.token, {
+    cookies.set("sessionId", token, {
       path: "/",
       httpOnly: true,
       secure: process.env.NODE_ENV === "production",
