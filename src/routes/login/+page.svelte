@@ -22,12 +22,38 @@
   {/if}
 
   <form method="POST" action="?/login">
-    <label for="username">Username:</label>
-    <input type="text" id="username" name="username" required />
+    <div class="grid grid-cols-3 gap-4 w-1/3 mx-auto py-8">
+      <label for="username">Username:</label>
+      <input
+        type="text"
+        id="username"
+        name="username"
+        required
+        class="col-span-2"
+      />
 
-    <label for="password">Password:</label>
-    <input type="password" id="password" name="password" required />
+      <label for="password">Password:</label>
+      <input
+        type="password"
+        id="password"
+        name="password"
+        required
+        class="col-span-2"
+      />
 
-    <button type="submit">Login</button>
+      <button type="submit" class="col-span-3 w-1/2 mx-auto cursor-pointer"
+        >Login</button
+      >
+    </div>
   </form>
 </div>
+
+<style>
+  input,
+  button {
+    background-color: var(--color-secondary);
+    color: var(--color-primary);
+
+    padding: 4px;
+  }
+</style>
