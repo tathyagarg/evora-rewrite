@@ -56,7 +56,9 @@
 >
   <div class="w-[90vw] sm:w-[50vw] text-center">
     <h1 class="text-2xl sm:text-6xl font-black mb-4">{post?.title}</h1>
-    <p class="text-sm sm:text-lg">{post?.quote}</p>
+    {#if post?.quote}
+      <p class="text-sm sm:text-lg">{post?.quote}</p>
+    {/if}
   </div>
 </div>
 

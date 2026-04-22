@@ -49,7 +49,9 @@
           {/if}
         {/each}
       </div>
-      <p class="text-lg">{data.quote}</p>
+      {#if data.quote}
+        <p class="text-lg">{data.quote}</p>
+      {/if}
       <a href="/blog/{data.slug}" class="text-secondary">Read more</a>
     </div>
   </button>
