@@ -70,9 +70,9 @@ model PostTag {
 }
 
 model Post {
-  slug  String @id
+  slug  String  @id
   title String
-  quote String
+  quote String?
 
   content String
 
