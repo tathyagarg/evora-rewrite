@@ -13,6 +13,7 @@ export const load: PageServerLoad = async ({ locals }) => {
 
   return {
     postKinds,
+    user: locals.user,
   }
 }
 
@@ -40,10 +41,10 @@ export const actions = {
       data: {
         slug,
         title,
-        quote: typeof quote === "string" ? quote : null,
+        quote: typeof quote === "string" ? quote : "",
         content,
         imgUrl: typeof image === "string" ? image : null,
-        postKindId: typeof kind === "string" ? parseInt(kind) : null,
+        postKindId: typeof kind === "string" ? parseInt(kind) : 0,
         authorId: locals.user.id,
       },
     });

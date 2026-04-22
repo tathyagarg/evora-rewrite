@@ -5,7 +5,7 @@ import crypto from "crypto";
 
 export const prerender = false;
 
-async function upgradeProvisional(name: string, password: string) {
+async function upgradeProvisional(name: string, password: string): Promise<string> {
   const existingProvisional = await prisma.provisionalAuthor.findUnique({
     where: { name },
   });
@@ -24,7 +24,7 @@ async function upgradeProvisional(name: string, password: string) {
 
     const token = crypto.randomBytes(32).toString("hex");
 
-    const session = await prisma.session.create({
+    await prisma.session.create({
       data: {
         authorId: user.id,
         expiresAt: new Date(Date.now() + 7 * 24 * 60 * 60 * 1000), // 7 days
@@ -32,8 +32,10 @@ async function upgradeProvisional(name: string, password: string) {
       },
     });
 
-    return session.token;
+    return token;
   }
+
+  return "";
 }
 
 export const actions = {

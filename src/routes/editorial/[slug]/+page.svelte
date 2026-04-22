@@ -40,12 +40,12 @@
 <script lang="ts">
   import Date from "$lib/components/Date.svelte";
   import Tag from "$lib/components/Tag.svelte";
+  import type { Author, Post, ProvisionalAuthor } from "@prisma/client";
 
   import { marked } from "marked";
 
   let { data } = $props();
-
-  let post = data.post;
+  let { post } = data;
 
   console.log("post", post);
 </script>
@@ -66,7 +66,9 @@
 >
   <div class="flex-1">
     <p class="py-2">
-      Written by {post?.author.name}
+      Written by {post?.author?.name ||
+        post?.provisionalAuthor?.name ||
+        "Unknown Author"}
     </p>
     <p class="py-2">
       {post?.content.split(/\s+/).length} words

@@ -1,0 +1,101 @@
+
+#post-content :global(pre) {
+  font-family: var(--font-text);
+  font-size: 1.25em;
+}
+
+#post-content :global(br) {
+  margin-bottom: 0.1em;
+}
+
+#post-content > :global(p:first-child::first-letter) {
+  font-size: 3.75em;
+  font-weight: bold;
+  float: left;
+  line-height: 1;
+  margin-right: 0.1em;
+}
+
+#post-content :global(p:not(:first-child)) {
+  text-indent: 1.5em;
+}
+
+#post-content :global(p) {
+  font-size: 1em;
+  text-align: justify;
+
+  margin-top: 1.5em;
+  margin-bottom: 1.5em;
+}
+
+#post-content :global(img) {
+  width: 100%;
+  height: auto;
+  margin: 1.5em 0;
+  border-radius: 0.5em;
+}
+
+#post-content :global(blockquote) {
+  border-left: 4px solid var(--primary);
+  padding-left: 1em;
+  margin-left: 0;
+  font-style: italic;
+  color: var(--color-emphasis);
+
+  font-size: 1.25em;
+}
+
+#post-content :global(p > blockquote) {
+  text-indent: 0;
+  margin-top: 1.5em;
+  margin-bottom: 1.5em;
+}
+
+:global(.date) {
+  margin-left: auto;
+  color: var(--darker-secondary);
+}
+
+#post-content :global(h1) {
+  font-size: 1.8em;
+  line-height: 1.2;
+
+  text-indent: 0;
+  margin-top: 1em;
+  margin-left: 0;
+  margin-bottom: 1em;
+  font-weight: bold;
+  color: var(--color-emphasis);
+  font-style: italic;
+}
+
+#post-content :global(h2) {
+  text-indent: 0;
+  margin-top: 2em;
+  margin-left: 0;
+  margin-bottom: 1em;
+  font-weight: bold;
+  color: var(--color-emphasis);
+  font-style: italic;
+}
+
+#post-content :global(ol) {
+  list-style: decimal outside;
+  margin-left: 1.5em;
+  margin-bottom: 1.5em;
+
+  text-align: justify;
+}
+
+#post-content :global(ul) {
+  list-style: disc outside;
+  margin-left: 1.5em;
+  margin-bottom: 1.5em;
+
+  text-align: justify;
+}
+
+#post-content > :global(li) {
+  margin-bottom: 1em;
+}
+

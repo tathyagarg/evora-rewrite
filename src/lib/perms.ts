@@ -6,8 +6,8 @@ const ADMIN = "Admin";
 const SUPER_ADMIN = "SuperAdmin";
 
 const PERMS: Record<string, string[]> = {
-  ADMIN: [PROVISION_AUTHOR_CREATE, POST_DELETE],
-  SUPER_ADMIN: [PROVISION_AUTHOR_CREATE, POST_DELETE],
+  Admin: [PROVISION_AUTHOR_CREATE, POST_DELETE],
+  SuperAdmin: [PROVISION_AUTHOR_CREATE, POST_DELETE],
 }
 
 export function hasPerm(role: string, permission: string) {

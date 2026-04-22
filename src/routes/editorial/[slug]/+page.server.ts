@@ -7,6 +7,7 @@ export const load: PageServerLoad = async ({ params, locals }) => {
     where: { slug: params.slug },
     include: {
       author: true,
+      provisionalAuthor: true,
       postKind: true,
     }
   });

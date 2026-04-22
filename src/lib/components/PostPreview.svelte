@@ -1,9 +1,14 @@
 <script lang="ts">
+  import type { Author, ProvisionalAuthor } from "@prisma/client";
   import Button from "./Button.svelte";
   import Date from "./Date.svelte";
   import Tag from "./Tag.svelte";
 
   let { data } = $props();
+  let {
+    author,
+    provisionalAuthor,
+  }: { author: Author; porvisionalAuthor: ProvisionalAuthor } = data;
 
   function titlecase(str: string): string {
     return str
@@ -34,7 +39,7 @@
     <div class="flex flex-col gap-4">
       <h2 class="text-2xl sm:text-4xl">{data.title}</h2>
       <div class="flex gap-4 text-sm text-primary/50">
-        <span>By {data.author.name}</span>
+        <span>By {author?.name ?? provisionalAuthor.name}</span>
         <Date date={data.created_at} />
       </div>
       <div class="flex gap-2">

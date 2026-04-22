@@ -32,7 +32,8 @@ model Author {
 model ProvisionalAuthor {
   id Int @id @default(autoincrement())
 
-  name String @unique
+  name  String @unique
+  posts Post[]
 }
 
 model Session {
@@ -75,8 +76,11 @@ model Post {
 
   content String
 
-  authorId Int
-  author   Author @relation(fields: [authorId], references: [id])
+  authorId Int?
+  author   Author? @relation(fields: [authorId], references: [id])
+
+  provisionalAuthorId Int?
+  provisionalAuthor   ProvisionalAuthor? @relation(fields: [provisionalAuthorId], references: [id])
 
   postKindId Int
   postKind   PostKind @relation(fields: [postKindId], references: [id])

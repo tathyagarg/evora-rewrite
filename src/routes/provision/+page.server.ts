@@ -1,7 +1,7 @@
 import { prisma } from "$lib/server/prisma";
 import { redirect, type Actions } from "@sveltejs/kit";
-import type { PageServerLoad } from "../$types";
 import { hasPerm, PROVISION_AUTHOR_CREATE } from "$lib/perms";
+import type { PageServerLoad } from "./$types";
 
 export const load: PageServerLoad = async ({ locals }) => {
   if (!locals.user) {
@@ -9,6 +9,7 @@ export const load: PageServerLoad = async ({ locals }) => {
   }
 
   if (!hasPerm(locals.user.role, PROVISION_AUTHOR_CREATE)) {
+    console.log("User does not have permission to create provisional authors: ", locals.user);
     return redirect(302, "/");
   }
 }

@@ -8,6 +8,7 @@ export const load: PageServerLoad = async ({ locals }) => {
       content: false,
       postKind: true,
       author: true,
+      provisionalAuthor: true,
     }
   });
 
