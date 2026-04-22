@@ -7,8 +7,6 @@
 
   const start_date = new Date(data.start);
   const end_date = data.end ? new Date(data.end) : undefined;
-
-  console.log(data);
 </script>
 
 <Button align_top={true}>

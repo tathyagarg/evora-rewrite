@@ -7,6 +7,7 @@
   import EventPreview from "$lib/components/EventPreview.svelte";
 
   let { data } = $props();
+  let { events } = data;
 
   // console.log(latest_posts);
 
@@ -87,11 +88,9 @@
   <h1 class="text-7xl">Our latest work</h1>
   <hr />
   <div class="mt-12 grid grid-cols-1 sm:grid-cols-3 gap-12">
-    <!--
     {#each events as event}
       <EventPreview data={event} />
     {/each}
--->
   </div>
 </div>
 
