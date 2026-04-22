@@ -3,7 +3,6 @@ import type { PageServerLoad } from "./$types";
 
 export const load: PageServerLoad = async ({ locals }) => {
   const posts = await prisma.post.findMany({
-    take: 6,
     include: {
       content: false,
       postKind: true,
@@ -12,8 +11,11 @@ export const load: PageServerLoad = async ({ locals }) => {
     }
   });
 
+  const postKinds = await prisma.postKind.findMany();
+
   return {
     posts,
+    postKinds,
     user: locals.user,
   }
 }

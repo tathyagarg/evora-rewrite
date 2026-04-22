@@ -5,7 +5,7 @@
   import PostPreview from "$lib/components/PostPreview.svelte";
 
   const { data } = $props();
-  const { posts, user } = data;
+  const { postKinds, posts, user } = data;
 
   var current_filters: PostFilter[] = $state([]);
   let current_posts = $derived.by(() => {
@@ -49,11 +49,9 @@
         }}
       >
         <option value="all">All</option>
-        <option value="blogs">Blogs</option>
-        <option value="opinionated">Opinionated</option>
-        <option value="literature">Literature</option>
-        <option value="knowyourlaws">Know Your Laws</option>
-        <option value="other">Other</option>
+        {#each postKinds as kind}
+          <option value={kind.name}>{kind.name}</option>
+        {/each}
       </select>
     </div>
   </div>
