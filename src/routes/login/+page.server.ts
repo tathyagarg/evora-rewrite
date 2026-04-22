@@ -20,6 +20,11 @@ async function upgradeProvisional(name: string, password: string): Promise<strin
       },
     });
 
+    await prisma.post.updateMany({
+      where: { provisionalAuthorId: existingProvisional.id },
+      data: { authorId: user.id, provisionalAuthorId: null },
+    });
+
     await prisma.provisionalAuthor.delete({ where: { id: existingProvisional.id } });
 
     const token = crypto.randomBytes(32).toString("hex");
