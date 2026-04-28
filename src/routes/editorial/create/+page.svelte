@@ -3,7 +3,7 @@
   import "../../post.css";
 
   let { data, form } = $props();
-  let { postKinds, user } = data;
+  let { postKinds, user, authorNames } = data;
 
   let title = $state("");
   let quote = $state("");
@@ -56,6 +56,13 @@
         <select id="kind" name="kind" required class="col-span-2">
           {#each postKinds as kind}
             <option value={kind.id}>{kind.name}</option>
+          {/each}
+        </select>
+
+        <label for="author">Author:</label>
+        <select id="author" name="author" required class="col-span-2">
+          {#each authorNames as author}
+            <option value={author}>{author}</option>
           {/each}
         </select>
 
