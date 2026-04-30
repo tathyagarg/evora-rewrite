@@ -9,6 +9,7 @@
   let quote = $state("");
   let postData = $state("");
   let imgUrl = $state("");
+  let authorName = $state("");
 
   console.log(user);
 </script>
@@ -60,7 +61,13 @@
         </select>
 
         <label for="author">Author:</label>
-        <select id="author" name="author" required class="col-span-2">
+        <select
+          id="author"
+          name="author"
+          required
+          class="col-span-2"
+          bind:value={authorName}
+        >
           {#each authorNames as author}
             <option value={author}>{author}</option>
           {/each}
@@ -78,7 +85,7 @@
       <h1 class="text-emphasis text-2xl font-bold mb-2">{title}</h1>
       <h2 class="text-lg italic mb-4">{quote}</h2>
       {#if title.length > 0}
-        By {user?.name}
+        By {authorName}
       {/if}
       <img src={imgUrl} alt="" class="w-full h-auto mb-4 rounded" />
       <div id="post-content">
