@@ -61,7 +61,3 @@ main > div {
   linear-gradient(90deg, var(--semi-secondary) 1.5px, transparent 1.5px, transparent calc(100% - 1.5px), var(--semi-secondary) calc(100% - 1.5px));
   background-size: 100px 100px;
 }
-
-main > div > div {
-  background: url('/assets/waves.svg') 0 -75px / cover, radial-gradient(circle at 50% 50%, transparent, var(--color-primary) 90%);
-}

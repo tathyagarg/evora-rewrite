@@ -5,8 +5,8 @@
 </script>
 
 <Button>
-  <div class="flex flex-col items-start justify-start gap-2">
-    <strong class="text-4xl sm:text-6xl">{value}</strong>
+  <div class="h-full flex flex-col items-start justify-start gap-2">
+    <strong class="text-4xl">{value}</strong>
     <span class="text-sm sm:text-lg">
       {title}
     </span>
