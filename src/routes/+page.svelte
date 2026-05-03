@@ -1,8 +1,6 @@
 <script lang="ts">
   import Icon from "@iconify/svelte";
 
-  import Button from "$lib/components/Button.svelte";
-  import Stat from "$lib/components/Stat.svelte";
   import Footer from "$lib/components/Footer.svelte";
   import EventPreview from "$lib/components/EventPreview.svelte";
 
@@ -26,15 +24,6 @@
     >
       <h1 class="text-4xl lg:text-6xl">Pink Legal Club</h1>
       <img src="/assets/logo.png" alt="logo" class="w-1/3 object-contain" />
-      <Button>
-        <button
-          onclick={() => (window.location.href = "/work")}
-          class="flex items-center gap-2 cursor-pointer"
-        >
-          <span>Our work</span>
-          <Icon icon="mdi:arrow-right" class="text-2xl" />
-        </button>
-      </Button>
     </div>
   </div>
 
@@ -46,16 +35,16 @@
 </main>
 
 <div
-  class="h-screen relative z-1 bg-(--lighter-primary) text-lg border-y-2 border-secondary box-content"
+  class="h-screen relative z-1 bg-secondary text-primary text-lg border-y-2 border-secondary box-content"
 >
   <div class="flex h-full w-full items-center justify-center gap-12">
     <div
       class="flex-1 flex flex-col h-screen w-full items-center justify-center gap-12 p-4 lg:p-12"
     >
-      <div class="">
+      <div class="lg:w-3/4 mx-auto">
         <h1 class="text-7xl">Who we are</h1>
         <hr />
-        <p class="mt-4 text-sm sm:text-lg">
+        <p class="mt-4 text-sm sm:text-base text-black">
           PLC Evora is a club under Pink Legal Clubs, an initiative of Pink
           Legal—India’s largest and only platform dedicated to women’s legal
           rights. Our focus lies in creating social impact and spreading legal
@@ -66,11 +55,23 @@
           awareness programs for 200+ women. We also run our own editorial
           platform that publishes articles on law, society, and gender justice.
         </p>
-      </div>
-      <div class="grid grid-cols-4 gap-12">
-        {#each stats as stat}
-          <Stat title={stat.title} value={stat.value} />
-        {/each}
+
+        <div class="mt-4 grid grid-cols-2 rounded overflow-hidden w-full">
+          {#each stats as stat, i}
+            <div
+              class="flex flex-col items-center justify-center gap-2 border-t-1 border-l-1 border-primary p-4"
+              class:border-r-1={i === 1 || i === 3}
+              class:border-b-1={i === 2 || i === 3}
+              class:rounded-tl={i === 0}
+              class:rounded-tr={i === 1}
+              class:rounded-bl={i === 2}
+              class:rounded-br={i === 3}
+            >
+              <h2 class="text-4xl lg:text-5xl font-bold">{stat.value}</h2>
+              <p class="text-sm text-center">{stat.title}</p>
+            </div>
+          {/each}
+        </div>
       </div>
     </div>
 

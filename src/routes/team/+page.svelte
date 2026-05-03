@@ -1,5 +1,6 @@
 <script>
   import Don from "$lib/components/Don.svelte";
+  import Footer from "$lib/components/Footer.svelte";
   import Heading from "$lib/components/Heading.svelte";
 
   const dons = [
@@ -45,7 +46,7 @@
   ];
 </script>
 
-<div class="relative top-[calc(var(--spacing)*16+1.5em+2px)] z-0">
+<div class="py-24 z-0">
   <Heading text="Our Team" />
 
   <hr />
@@ -65,3 +66,5 @@
     </div>
   {/each}
 </div>
+
+<Footer top="" />
