@@ -1,5 +1,5 @@
 <nav
-  class="rounded-lg p-4 lg:px-4 py-4 border-secondary/20 border-2 flex gap-8 fixed top-2 left-2 right-2 bg-(--darker-primary) z-100
+  class="rounded-lg p-4 lg:px-4 py-4 border-secondary/20 border-2 flex gap-4 fixed top-2 left-2 right-2 bg-(--darker-primary) z-100
   shadow-2xl shadow-secondary/10
   "
 >
@@ -17,6 +17,8 @@
     padding: 0.5em 1em;
     border-radius: calc(infinity * 1px);
     transition: background-color 0.3s ease;
+
+    font-size: 0.75rem;
   }
 
   a:hover {

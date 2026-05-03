@@ -30,14 +30,16 @@
   <img
     src="/assets/waves.svg"
     alt="waves"
-    class="aspect-[16/9] z-1 absolute bottom-0 left-0 min-w-screen"
+    class="absolute bottom-0 right-0 left-0 min-w-screen"
   />
 </main>
 
 <div
   class="h-screen relative z-1 bg-secondary text-primary text-lg border-y-2 border-secondary box-content"
 >
-  <div class="flex h-full w-full items-center justify-center gap-12">
+  <div
+    class="flex flex-col sm:flex-row h-full w-full items-center justify-center gap-12"
+  >
     <div
       class="flex-1 flex flex-col h-screen w-full items-center justify-center gap-12 p-4 lg:p-12"
     >
@@ -78,7 +80,7 @@
     <img
       src="https://res.cloudinary.com/dt1rojbiv/image/upload/v1776528228/what-went-wrong_knszco.png"
       alt="what went wrong"
-      class="flex-1 h-full! w-full object-cover object-right"
+      class="flex-1 h-full! w-1/2 object-cover object-right"
     />
   </div>
 </div>
