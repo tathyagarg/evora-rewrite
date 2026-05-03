@@ -7,7 +7,9 @@
   <a href="/editorial">Editorial</a>
   <a href="/work">Our Work</a>
   <a href="/team">Team</a>
+  <!--
   <a href="/winners">Winning Essays</a>
+  -->
 </nav>
 
 <style>
