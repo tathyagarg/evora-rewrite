@@ -5,6 +5,71 @@
 
   const dons = [
     {
+      duration: "March 2026 - Present",
+      members: [
+        {
+          name: "Riddhima",
+          img: "/assets/dons/riddhima.jpeg",
+          description: `Hello everyone, I’m Riddhima and I am currently in grade 11 and I am excited to be your co-chairperson this quarter. 
+
+I have always had a keen interest in current social issues, global policies and law and hope to pursue this interest in the future. I actively work with different NGOs, run a blog, have interned with different organisations and have a passion for social advocacy. I value creativity, teamwork and communication and look forward to working with you all this quarter. Let’s do the best we can to ensure this quarter is productive and engaging!`,
+          role: "Co-Chairperson",
+        },
+        {
+          name: "Aadithya",
+          img: "/assets/dons/aadithya.jpeg",
+          description: `Hello everyone! I’m Aadithya, currently in 10th grade, and I’m excited to serve as your Chairperson.
+
+I’m an aspiring lawyer with a strong interest in law and society. I actively work with NGOs, enjoy playing squash, and have a passion for writing articles and poetry. I value clear communication, teamwork, and staying committed to our goals. Looking forward to a great journey together!`,
+          role: "Co-Chairperson",
+        },
+        {
+          name: "Nandita",
+          img: "/assets/dons/nandita.jpeg",
+          description: "",
+          role: "Project Coordinator",
+        },
+        {
+          name: "Aaryaman",
+          img: "/assets/dons/aaryaman.jpeg",
+          description:
+            "Aaryaman is a person who has wide ranging interests, his hobbies include public speaking, debates, reading, going out. He has a special interest in biology and wishes to pursue a future in the field of medicine. As a member of PLC Evora he wants to contribute as much as he possibly can. He also goes to MUNs and has had experience in organizing an interschool fest.",
+          role: "Secretary",
+        },
+        {
+          name: "Zahra",
+          img: "/assets/dons/zahra.jpeg",
+          description: `“Fall 7 times, stand up 8.”
+
+Hi, i’m Zahra, a homeschooled 12th grader, amateur designer, who on the political spectrum is a far-left radical socialist. I have been serving in PLC Evora for 6 months as a member and this quarter as the ‘head of design and creatives’, among other organisations due to an interest in philanthropy and rage in the unjust. I believe your rage is a catalyst for your liberation and to organise ourselves with specific causes for change we want to see in society is completely plausible, but the revolution first starts with your mind. On a lighter note, i really, really, really like music, writing, cinema, balloons and dissociating.`,
+          role: "Head of Design",
+        },
+        {
+          name: "Anshi",
+          img: "/assets/dons/anshi.jpeg",
+          description: `Hey! I’m Anshi Kulshreshtha, a 17-year-old student at Delhi Public School East who lives for the intersection of storytelling and social change. As a 12th grade Commerce and Mathematics student, I balance my academic life with a deepseated passion for filmmaking and journalism. I’ve always loved being behind the lens and occasionally in front of it creating hooked-in reels that bridge the gap between viral content and issues that actually matter.
+Currently, I serve as the Social Media Manager at Evora. I’m a revolutionary at heart, driven by a commitment to women’s empowerment and grassroots community service. Beyond the work, I’m always down for a high-stakes intellectual debate or a random dance floor moment. I firmly believe embarrassment is a myth, so if you have a weird side quest or want to talk about literally anything, hit me up!`,
+          role: "Social Media Manager",
+        },
+        {
+          name: "Nabarni",
+          img: "/assets/dons/nabarni.jpeg",
+          description:
+            "Hey! I am Nab, an 18 year old with a hyphenated dream: author-musician. Yet more often than not, my cat is my whole personality. Literature and literary analysis has always been a passion of mine, and I love analysing feminist, misogynistic, or satirical content. This particular interest arose from my reading of ‘The Scarlet Letter’ by Nathaniel Hawthorne, a feminist book from a misogynistic perspective. PLC Evora has given me the space to share such analyses, and I love writing for the organisation.",
+          role: "Editor in Chief",
+        },
+        {
+          name: "Ashwin",
+          img: "/assets/dons/ashwin.jpeg",
+          description: `“When oppression becomes fact, revolution becomes inevitable”
+Hi everyone!
+I’m Ashwin and I’m a first year law student at Symbiosis Law School, Pune. I’m an avid reader, debater and aspiring social activist. I joined Evora two quarters ago and I’ve served as the Editor in Chief. I’m a Marxist and an intersectional feminist, believing in the power of activism and mobilization to dismantle class and gender hierarchies which plague us all.
+In my free time I also enjoy watching football, being cursed to be a United supporter, along with listening to music and engaging in intellectual conversations.`,
+          role: "Deputy Editor in Chief",
+        },
+      ],
+    },
+    {
       duration: "August 2025 - March 2026",
       members: [
         {
@@ -49,9 +114,8 @@
 <div class="py-24 z-0">
   <Heading text="Our Team" />
 
-  <hr />
-
   {#each dons as session}
+    <hr class="my-8" />
     <h2 class="text-6xl text-center py-12">{session.duration}</h2>
 
     <div class="grid grid-cols-1 sm:grid-cols-2 w-full gap-12 px-[8vw]">

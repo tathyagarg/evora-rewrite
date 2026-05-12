@@ -13,7 +13,9 @@
       <h2 class="text-2xl font-semibold mb-2">{name}</h2>
       <h3 class="text-lg text-primary font-semibold">{role}</h3>
       <hr class="my-4" />
-      <p class="text-sm">{description}</p>
+      <pre class="font-text whitespace-pre-wrap"><p
+          class="text-sm">{description}</p>
+        </pre>
     </div>
   </div>
 </div>
