@@ -7,7 +7,7 @@
   let {
     author,
     provisionalAuthor,
-  }: { author: Author; porvisionalAuthor: ProvisionalAuthor } = data;
+  }: { author: Author; porvisionalAuthor: ProvisionalAuthor } = $derived(data);
 
   function titlecase(str: string): string {
     return str
