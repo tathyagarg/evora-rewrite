@@ -26,7 +26,6 @@
     }
 
     ctx?.putImageData(imageData ?? new ImageData(0, 0), 0, 0);
-    console.log("data url: ", canvas.toDataURL());
     document.body.style.backgroundImage = `url(${canvas.toDataURL()})`;
   });
 
