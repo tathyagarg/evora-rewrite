@@ -10,10 +10,9 @@
     }),
   );
   const start_day = $derived(absolute_start_date.getDate());
-  const start_hour = $derived(absolute_start_date.getHours());
 </script>
 
 <span class="text-sm text-primary/50">
   {start_month}
-  {start_day}, {start_year} at {start_hour}:00
+  {start_day}, {start_year}
 </span>
