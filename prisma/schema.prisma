@@ -100,7 +100,6 @@ model Event {
   imgUrl      String?
 
   start DateTime
-  end   DateTime
 
   location String
 }

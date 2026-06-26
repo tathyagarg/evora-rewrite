@@ -5,7 +5,6 @@
   let { data } = $props();
 
   const start_date = new Date(data.start);
-  const end_date = data.end ? new Date(data.end) : undefined;
 </script>
 
 <div class="bg-secondary text-primary rounded overflow-hidden" id="card">
@@ -20,7 +19,7 @@
       <div class="flex flex-col gap-2">
         <div class="flex gap-2 items-center text-sm text-primary/50">
           <Icon icon="mdi:calendar" class="w-5 h-5" />
-          <TimeDelta {start_date} {end_date} />
+          <TimeDelta {start_date} />
         </div>
         <div class="flex gap-2 items-center text-sm text-primary/50">
           <Icon icon="mdi:map-marker" class="w-5 h-5" />
