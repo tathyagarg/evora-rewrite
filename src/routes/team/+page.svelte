@@ -5,7 +5,7 @@
 
   const dons = [
     {
-      duration: "March 2026 - Present",
+      duration: "April 2026 - Present",
       members: [
         {
           name: "Riddhima",
@@ -65,12 +65,12 @@ Currently, I serve as the Social Media Manager at Evora. I’m a revolutionary a
 Hi everyone!
 I’m Ashwin and I’m a first year law student at Symbiosis Law School, Pune. I’m an avid reader, debater and aspiring social activist. I joined Evora two quarters ago and I’ve served as the Editor in Chief. I’m a Marxist and an intersectional feminist, believing in the power of activism and mobilization to dismantle class and gender hierarchies which plague us all.
 In my free time I also enjoy watching football, being cursed to be a United supporter, along with listening to music and engaging in intellectual conversations.`,
-          role: "Deputy Editor in Chief",
+          role: "Co-Editor in Chief",
         },
       ],
     },
     {
-      duration: "August 2025 - March 2026",
+      duration: "October 2025 - April 2026",
       members: [
         {
           name: "Varshini",
@@ -105,6 +105,53 @@ In my free time I also enjoy watching football, being cursed to be a United supp
           description:
             "“Great things come in small packages”, I might be small but my intentions are big. Hey, my name is Hridaya Shekar Iyer, and I am the project cordniator of plc evora. As a professional dancer, I can confidently say that I am deeply dedicated to the art, using it as a form of expression and connection. Growing up as the daughter of the founders of a nonprofit NGO dedicated to serving the underprivileged, I have always been deeply committed to social service. I am active, friendly, and cheerful, and I strive to contribute positively to those around me. As a former captain, I have developed strong leadership skills and a drive to create meaningful change in the world.",
           role: "Project Coordinator",
+        },
+        {
+          name: "Zahra",
+          img: "/assets/dons/zahra.jpeg",
+          description: `“Fall 7 times, stand up 8.”
+
+Hi, i’m Zahra, a homeschooled 12th grader, amateur designer, who on the political spectrum is a far-left radical socialist. I have been serving in PLC Evora for 6 months as a member and this quarter as the ‘head of design and creatives’, among other organisations due to an interest in philanthropy and rage in the unjust. I believe your rage is a catalyst for your liberation and to organise ourselves with specific causes for change we want to see in society is completely plausible, but the revolution first starts with your mind. On a lighter note, i really, really, really like music, writing, cinema, balloons and dissociating.`,
+          role: "Head of Design",
+        },
+        {
+          name: "Ashwin",
+          img: "/assets/dons/ashwin.jpeg",
+          description: `“When oppression becomes fact, revolution becomes inevitable”
+Hi everyone!
+I’m Ashwin and I’m a first year law student at Symbiosis Law School, Pune. I’m an avid reader, debater and aspiring social activist. I joined Evora two quarters ago and I’ve served as the Editor in Chief. I’m a Marxist and an intersectional feminist, believing in the power of activism and mobilization to dismantle class and gender hierarchies which plague us all.
+In my free time I also enjoy watching football, being cursed to be a United supporter, along with listening to music and engaging in intellectual conversations.`,
+          role: "Editor in Chief",
+        },
+      ],
+    },
+    {
+      duration: "January 2025 - October 2025",
+      members: [
+        {
+          name: "Mahika",
+          img: "/assets/dons/mahika.jpeg",
+          role: "Co-Chairperson",
+        },
+        {
+          name: "Gunamay",
+          img: "/assets/dons/gunamay.jpeg",
+          role: "Co-Chairperson",
+        },
+        {
+          name: "Sidhika",
+          img: "/assets/dons/sidhika.jpeg",
+          role: "Secretary",
+        },
+        {
+          name: "Tanishka",
+          img: "/assets/dons/tanishka.jpeg",
+          role: "Project Coordinator",
+        },
+        {
+          name: "Navya",
+          img: "/assets/dons/navya.jpeg",
+          role: "Social Media Manager",
         },
       ],
     },
